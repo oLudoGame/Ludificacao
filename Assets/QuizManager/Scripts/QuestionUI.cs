@@ -68,7 +68,7 @@ class QuestionUI : MonoBehaviour {
 			         ((index + 1).ToString(), answer))) {
 			var answerElement = transform.Find("Answers").Find($"AnswerButton{answerNumber}");
 			var buttonText = answerElement.GetComponentInChildren<TextMeshProUGUI>();
-			buttonText.text = answer.text;
+			buttonText.text = $"{answerNumber} - {answer.text}";
 			answerElement.GetComponent<Button>().onClick.RemoveAllListeners();
 			answerElement.GetComponent<Button>().onClick.AddListener(() => {
 					Debug.Log($"Answer {buttonText.text}");
